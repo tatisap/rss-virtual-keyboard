@@ -65,8 +65,23 @@ body {
     background-color: $dark-background-color;
   }
 }
+.arrow-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 45px);
+  grid-template-rows: repeat(2, 20px);
+  grid-column-gap: 6px;
+  grid-row-gap: 5px;
+  & .button:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    justify-self: center;
+  }
+}
 .button {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   border: 1px solid $light-border-color;
   border-radius: 10px;
@@ -76,7 +91,6 @@ body {
   color: $light-text-color;
   transition: 0.3s;
   &:hover {
-    transform: scale(1.05);
     cursor: pointer;
   }
   &.active {
@@ -100,16 +114,18 @@ body {
   &.caps-lock {
     width: 81px;
   }
-  &.shift-left {
+  &.left.shift{
     width: 100px;
   }
   &.command {
     width: 66px;
   }
   &.arrow {
+    border-radius: 5px;
     height: 20px;
+    font-size: 12px;
   }
-  &.shift-right {
+  &.right.shift {
     width: 113px;
   }
   &.enter {
@@ -117,5 +133,8 @@ body {
   }
   &.backspace {
     width: 115px;
+  }
+  &.space {
+    width: 342px;
   }
 }
