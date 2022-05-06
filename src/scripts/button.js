@@ -25,4 +25,14 @@ export default class Button {
   addToBoard() {
     document.querySelector('.keyboard-wrapper').append(this.element);
   }
+
+  initButtonEffect() {
+    this.element.addEventListener('mousedown', (event) => {
+      event.preventDefault();
+      this.element.classList.add('effect');
+    });
+    window.addEventListener('mouseup', () => {
+      this.element.classList.remove('effect');
+    });
+  }
 }

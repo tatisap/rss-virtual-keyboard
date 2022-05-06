@@ -7,7 +7,9 @@ initPageLayout();
 
 function addKeys() {
   keys.forEach((key) => {
-    new Button(key).addToBoard();
+    const button = new Button(key);
+    button.addToBoard();
+    button.initButtonEffect();
   });
 }
 
