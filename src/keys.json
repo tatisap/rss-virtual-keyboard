@@ -475,6 +475,7 @@
   },
   {
     "code": "Space",
+    "type": "alphanumeric",
     "enKey": " ",
     "enShiftKey": " ",
     "ruKey": " ",

@@ -41,6 +41,27 @@ document.querySelector('.keyboard-wrapper').addEventListener('click', (event) =>
   buttons.forEach((button) => {
     if (element !== button.element) return;
     textarea.focus();
-    textarea.setRangeText(button.en.key, textarea.selectionStart, textarea.selectionEnd, 'end');
+    if (button.type === 'alphanumeric') {
+      textarea.setRangeText(button.content.textContent, textarea.selectionStart, textarea.selectionEnd, 'end');
+    }
+  });
+});
+
+let isUpperCase = false;
+document.querySelectorAll('.shift').forEach((shift) => {
+  shift.addEventListener('click', () => {
+    if (isUpperCase) {
+      buttons.forEach((button) => {
+        const elem = button;
+        elem.content.textContent = button.en.key;
+      });
+      isUpperCase = false;
+    } else {
+      buttons.forEach((button) => {
+        const elem = button;
+        elem.content.textContent = button.en.shiftKey;
+      });
+      isUpperCase = true;
+    }
   });
 });
