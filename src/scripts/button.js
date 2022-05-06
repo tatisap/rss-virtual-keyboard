@@ -2,6 +2,11 @@ export default class Button {
   constructor(key) {
     const element = document.createElement('div');
     element.classList.add('button');
+    document.querySelector('.keyboard-wrapper').append(element);
+
+    const content = document.createElement('span');
+    content.textContent = key.enKey;
+    element.append(content);
 
     if (key.type === 'functional') {
       element.classList.add(key.position);
@@ -12,18 +17,18 @@ export default class Button {
     if (key.code === 'Space') element.classList.add('space');
     if (key.code.includes('Arrow')) element.classList.add('arrow');
 
-    const content = document.createElement('span');
-    content.textContent = key.enKey;
-    element.append(content);
-
     this.element = element;
     this.content = content;
     this.code = key.code;
     this.type = key.type;
-  }
-
-  addToBoard() {
-    document.querySelector('.keyboard-wrapper').append(this.element);
+    this.en = {
+      key: key.enKey,
+      shiftKey: key.enShiftKey,
+    };
+    this.ru = {
+      key: key.ruKey,
+      shiftKey: key.ruShiftKey,
+    };
   }
 
   initButtonEffect() {
