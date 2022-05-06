@@ -31,8 +31,13 @@ export default class Button {
       event.preventDefault();
       this.element.classList.add('effect');
     });
-    window.addEventListener('mouseup', () => {
+    window.addEventListener('mouseup', (event) => {
+      if (event.target === this.element) return;
       this.element.classList.remove('effect');
+    });
+    this.element.addEventListener('click', () => {
+      this.element.classList.add('effect');
+      setTimeout(() => { this.element.classList.remove('effect'); }, 200);
     });
   }
 }
