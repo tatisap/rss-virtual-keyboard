@@ -2,7 +2,6 @@ export default class Button {
   constructor(key) {
     const element = document.createElement('div');
     element.classList.add('button');
-    document.querySelector('.keyboard-wrapper').append(element);
 
     const content = document.createElement('span');
     content.textContent = key.enKey;
@@ -22,12 +21,12 @@ export default class Button {
     this.code = key.code;
     this.type = key.type;
     this.en = {
-      key: key.enKey,
-      shiftKey: key.enShiftKey,
+      low: key.enKey,
+      up: key.enShiftKey,
     };
     this.ru = {
-      key: key.ruKey,
-      shiftKey: key.ruShiftKey,
+      low: key.ruKey,
+      up: key.ruShiftKey,
     };
   }
 

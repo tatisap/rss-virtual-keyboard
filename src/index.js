@@ -1,35 +1,22 @@
 import './styles/style.scss';
 import initPageLayout from './scripts/page';
-import Button from './scripts/button';
 import keys from './keys.json';
+import Keyboard from './scripts/keyboard';
 
 initPageLayout();
 
-const textarea = document.querySelector('.text');
-const buttons = [];
+const keyboard = new Keyboard(keys);
 
-function addKeys() {
-  keys.forEach((key) => {
-    const button = new Button(key);
-    button.initButtonEffect();
-    buttons.push(button);
-  });
-}
-
-addKeys();
-
-const arrowWrapper = document.createElement('div');
-arrowWrapper.classList.add('arrow-wrapper');
-document.querySelector('.keyboard-wrapper').append(arrowWrapper);
-document.querySelectorAll('.arrow').forEach((arrow) => arrowWrapper.append(arrow));
+keyboard.buttons.forEach((button) => { keyboard.add(button); });
+keyboard.addArrowWrapper();
 
 window.addEventListener('keydown', (event) => {
-  buttons.forEach((button) => {
+  keyboard.buttons.forEach((button) => {
     if (event.code === button.code) button.element.classList.add('active');
   });
 });
 window.addEventListener('keyup', (event) => {
-  buttons.forEach((button) => {
+  keyboard.buttons.forEach((button) => {
     if (event.code === button.code) button.element.classList.remove('active');
   });
 });
@@ -38,30 +25,29 @@ document.querySelector('.keyboard-wrapper').addEventListener('click', (event) =>
   const element = event.target.closest('.button');
   if (!element) return;
 
-  buttons.forEach((button) => {
+  keyboard.buttons.forEach((button) => {
     if (element !== button.element) return;
-    textarea.focus();
+    keyboard.textarea.focus();
     if (button.type === 'alphanumeric') {
-      textarea.setRangeText(button.content.textContent, textarea.selectionStart, textarea.selectionEnd, 'end');
+      keyboard.textarea.setRangeText(button.content.textContent, keyboard.textarea.selectionStart, keyboard.textarea.selectionEnd, 'end');
+
+      if (keyboard.shiftIsOn) {
+        keyboard.changeKeysCase();
+        keyboard.toggleShift();
+        keyboard.removeActiveAll();
+      }
     }
   });
 });
 
-let isUpperCase = false;
 document.querySelectorAll('.shift').forEach((shift) => {
-  shift.addEventListener('click', () => {
-    if (isUpperCase) {
-      buttons.forEach((button) => {
-        const elem = button;
-        elem.content.textContent = button.en.key;
-      });
-      isUpperCase = false;
-    } else {
-      buttons.forEach((button) => {
-        const elem = button;
-        elem.content.textContent = button.en.shiftKey;
-      });
-      isUpperCase = true;
-    }
+  shift.addEventListener('click', (event) => {
+    event.target.classList.toggle('active');
+    keyboard.changeKeysCase();
+    keyboard.toggleShift();
   });
+});
+
+document.querySelector('.caps-lock').addEventListener('click', (event) => {
+  event.target.classList.toggle('active');
 });
