@@ -5,6 +5,7 @@ import keys from './keys.json';
 
 initPageLayout();
 
+const textarea = document.querySelector('.text');
 const buttons = [];
 
 function addKeys() {
@@ -30,5 +31,16 @@ window.addEventListener('keydown', (event) => {
 window.addEventListener('keyup', (event) => {
   buttons.forEach((button) => {
     if (event.code === button.code) button.element.classList.remove('active');
+  });
+});
+
+document.querySelector('.keyboard-wrapper').addEventListener('click', (event) => {
+  const element = event.target.closest('.button');
+  if (!element) return;
+
+  buttons.forEach((button) => {
+    if (element !== button.element) return;
+    textarea.focus();
+    textarea.setRangeText(button.en.key, textarea.selectionStart, textarea.selectionEnd, 'end');
   });
 });
