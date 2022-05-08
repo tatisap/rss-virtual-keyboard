@@ -54,7 +54,7 @@ export default class Keyboard {
 
   removeActiveAll() {
     this.buttons.forEach((button) => {
-      if (button.code !== 'CapsLock') button.element.classList.remove('active');
+      if (button.code !== 'CapsLock') button.element.classList.remove('pressed');
     });
   }
 

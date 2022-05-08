@@ -12,12 +12,12 @@ keyboard.addArrowWrapper();
 
 window.addEventListener('keydown', (event) => {
   keyboard.buttons.forEach((button) => {
-    if (event.code === button.code) button.element.classList.add('active');
+    if (event.code === button.code) button.element.classList.add('pressed');
   });
 });
 window.addEventListener('keyup', (event) => {
   keyboard.buttons.forEach((button) => {
-    if (event.code === button.code) button.element.classList.remove('active');
+    if (event.code === button.code) button.element.classList.remove('pressed');
   });
 });
 
@@ -61,8 +61,8 @@ document.querySelector('.caps-lock').addEventListener('click', (event) => {
 });
 
 window.addEventListener('keyup', (event) => {
-  if (event.metaKey && (event.code === 'ShiftLeft' || event.code === 'ShiftRight')) {
-    event.preventDefault();
+  if ((event.metaKey && (event.code === 'ShiftLeft' || event.code === 'ShiftRight'))
+    || (event.shiftKey && (event.code === 'MetaLeft' || event.code === 'MetaRight'))) {
     keyboard.switchLanguage();
   }
 });

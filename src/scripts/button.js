@@ -33,15 +33,15 @@ export default class Button {
   initButtonEffect() {
     this.element.addEventListener('mousedown', (event) => {
       event.preventDefault();
-      this.element.classList.add('effect');
+      this.element.classList.add('pressed');
     });
     window.addEventListener('mouseup', (event) => {
       if (event.target === this.element) return;
-      this.element.classList.remove('effect');
+      this.element.classList.remove('pressed');
     });
     this.element.addEventListener('click', () => {
-      this.element.classList.add('effect');
-      setTimeout(() => { this.element.classList.remove('effect'); }, 200);
+      this.element.classList.add('pressed');
+      setTimeout(() => { this.element.classList.remove('pressed'); }, 200);
     });
   }
 }
