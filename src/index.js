@@ -37,19 +37,27 @@ document.querySelector('.keyboard-wrapper').addEventListener('click', (event) =>
         keyboard.removeActiveAll();
       }
     }
+    if (button.code === 'Enter') keyboard.textarea.setRangeText('\n', keyboard.textarea.selectionStart, keyboard.textarea.selectionEnd, 'end');
+    if (button.code === 'Tab') keyboard.textarea.setRangeText('\t', keyboard.textarea.selectionStart, keyboard.textarea.selectionEnd, 'end');
+    if (button.code === 'Backspace') keyboard.textarea.setRangeText('', keyboard.textarea.selectionStart - 1, keyboard.textarea.selectionEnd, 'end');
+    if (button.code === 'Delete') keyboard.textarea.setRangeText('', keyboard.textarea.selectionStart, keyboard.textarea.selectionEnd + 1, 'end');
   });
 });
 
 document.querySelectorAll('.shift').forEach((shift) => {
   shift.addEventListener('click', (event) => {
-    event.target.classList.toggle('active');
+    const element = event.target.closest('.shift');
+    element.classList.toggle('active');
     keyboard.changeKeysCase();
     keyboard.toggleShift();
   });
 });
 
 document.querySelector('.caps-lock').addEventListener('click', (event) => {
-  event.target.classList.toggle('active');
+  const element = event.target.closest('.caps-lock');
+  element.classList.toggle('active');
+  keyboard.changeKeysCase();
+  keyboard.toggleCaps();
 });
 
 window.addEventListener('keyup', (event) => {
