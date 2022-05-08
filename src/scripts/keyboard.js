@@ -2,10 +2,11 @@ import Button from './button';
 
 export default class Keyboard {
   constructor(keys) {
+    const language = (localStorage.getItem('lng')) ? localStorage.getItem('lng') : 'en';
     const buttons = [];
 
     keys.forEach((key) => {
-      const button = new Button(key);
+      const button = new Button(key, language);
       button.initButtonEffect();
       buttons.push(button);
     });
@@ -14,7 +15,7 @@ export default class Keyboard {
     this.textarea = document.querySelector('.text');
     this.buttons = buttons;
     this.case = 'low';
-    this.language = 'en';
+    this.language = language;
     this.shiftIsOn = false;
     this.capsIsOn = false;
   }
@@ -40,11 +41,7 @@ export default class Keyboard {
 
   changeKeysCase() {
     this.changeCase();
-    this.buttons.forEach((button) => {
-      const elem = button;
-      const content = button[this.language][this.case];
-      elem.content.textContent = content;
-    });
+    this.changeButtonsContent();
   }
 
   toggleShift() {
@@ -58,6 +55,19 @@ export default class Keyboard {
   removeActiveAll() {
     this.buttons.forEach((button) => {
       button.element.classList.remove('active');
+    });
+  }
+
+  switchLanguage() {
+    this.changeLanguage();
+    this.changeButtonsContent();
+  }
+
+  changeButtonsContent() {
+    this.buttons.forEach((button) => {
+      const elem = button;
+      const content = button[this.language][this.case];
+      elem.content.textContent = content;
     });
   }
 }

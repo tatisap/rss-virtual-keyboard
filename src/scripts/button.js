@@ -1,10 +1,10 @@
 export default class Button {
-  constructor(key) {
+  constructor(key, language) {
     const element = document.createElement('div');
     element.classList.add('button');
 
     const content = document.createElement('span');
-    content.textContent = key.enKey;
+    content.textContent = key[(language === 'en') ? 'enKey' : 'ruKey'];
     element.append(content);
 
     if (key.type === 'functional') {

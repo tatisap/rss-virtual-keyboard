@@ -51,3 +51,14 @@ document.querySelectorAll('.shift').forEach((shift) => {
 document.querySelector('.caps-lock').addEventListener('click', (event) => {
   event.target.classList.toggle('active');
 });
+
+window.addEventListener('keyup', (event) => {
+  if (event.metaKey && (event.code === 'ShiftLeft' || event.code === 'ShiftRight')) {
+    event.preventDefault();
+    keyboard.switchLanguage();
+  }
+});
+
+window.addEventListener('beforeunload', () => {
+  localStorage.setItem('lng', keyboard.language);
+});
