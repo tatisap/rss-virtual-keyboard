@@ -50,8 +50,7 @@ document.querySelectorAll('.shift').forEach((shift) => {
     keyboard.press(button);
   });
   shift.addEventListener('mouseup', (event) => {
-    console.log(keyboard.isShiftOn);
-    if (!keyboard.shiftIsOn) return;
+    if (!keyboard.isShiftOn) return;
     const elem = event.target.closest('.shift');
     if (!elem) return;
     const button = keyboard.buttons.find((btn) => btn.element === elem);
@@ -60,8 +59,8 @@ document.querySelectorAll('.shift').forEach((shift) => {
 });
 
 window.addEventListener('keyup', (event) => {
-  if ((event.metaKey && (event.code === 'ShiftLeft' || event.code === 'ShiftRight'))
-    || (event.shiftKey && (event.code === 'MetaLeft' || event.code === 'MetaRight'))) {
+  if ((event.altKey && (event.code === 'ControlLeft'))
+    || (event.ctrlKey && (event.code === 'AltLeft'))) {
     keyboard.switchLanguage();
   }
 });

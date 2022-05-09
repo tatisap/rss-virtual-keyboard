@@ -23,10 +23,12 @@ export default class Button {
     this.en = {
       low: key.enKey,
       up: key.enShiftKey,
+      upCaps: key.enCapsKey,
     };
     this.ru = {
       low: key.ruKey,
       up: key.ruShiftKey,
+      upCaps: key.ruCapsKey,
     };
   }
 

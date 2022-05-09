@@ -16,8 +16,9 @@ export default class Keyboard {
     this.buttons = buttons;
     this.case = 'low';
     this.language = language;
-    this.shiftIsOn = false;
-    this.capsIsOn = false;
+    this.isShiftOn = false;
+    this.isCapsOn = false;
+    this.trigger = '';
   }
 
   add(button) {
@@ -45,11 +46,11 @@ export default class Keyboard {
   }
 
   toggleShift() {
-    this.shiftIsOn = !this.shiftIsOn;
+    this.isShiftOn = !this.isShiftOn;
   }
 
   toggleCaps() {
-    this.capsIsOn = !this.capsIsOn;
+    this.isCapsOn = !this.isCapsOn;
   }
 
   removeActiveShift() {
@@ -61,6 +62,23 @@ export default class Keyboard {
   switchLanguage() {
     this.changeLanguage();
     this.changeButtonsContent();
+  }
+
+  swap() {
+    let basket;
+    this.buttons.forEach((button) => {
+      const btn = button;
+      if (button.en.upCaps) {
+        basket = btn.en.low;
+        btn.en.low = btn.en.up;
+        btn.en.up = basket;
+      }
+      if (button.ru.upCaps) {
+        basket = btn.ru.low;
+        btn.ru.low = btn.ru.up;
+        btn.ru.up = basket;
+      }
+    });
   }
 
   changeButtonsContent() {
@@ -138,15 +156,18 @@ export default class Keyboard {
       case 'CapsLock':
         this.textarea.blur();
         button.element.classList.toggle('active');
-        this.changeKeysCase();
         this.toggleCaps();
+        this.trigger = 'CapsLock';
+        this.swap();
+        this.changeButtonsContent();
         break;
       case 'ShiftLeft':
       case 'ShiftRight':
         this.textarea.blur();
         button.element.classList.toggle('active');
-        this.changeKeysCase();
         this.toggleShift();
+        this.trigger = 'Shift';
+        this.changeKeysCase();
         break;
       default:
         if (button.type === 'alphanumeric') {

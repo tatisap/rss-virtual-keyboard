@@ -126,80 +126,101 @@
     "type": "alphanumeric",
     "enKey": "q",
     "enShiftKey": "Q",
+    "enCapsKey": "Q",
     "ruKey": "й",
-    "ruShiftKey": "Й"
+    "ruShiftKey": "Й",
+    "ruCapsKey": "Й"
   },
   {
     "code": "KeyW",
     "type": "alphanumeric",
     "enKey": "w",
     "enShiftKey": "W",
+    "enCapsKey": "W",
     "ruKey": "ц",
-    "ruShiftKey": "Ц"
+    "ruShiftKey": "Ц",
+    "ruCapsKey": "Ц"
   },
   {
     "code": "KeyE",
     "type": "alphanumeric",
     "enKey": "e",
     "enShiftKey": "E",
+    "enCapsKey": "E",
     "ruKey": "у",
-    "ruShiftKey": "У"
+    "ruShiftKey": "У",
+    "ruCapsKey": "У"
   },
   {
     "code": "KeyR",
     "type": "alphanumeric",
     "enKey": "r",
     "enShiftKey": "R",
+    "enCapsKey": "R",
     "ruKey": "к",
-    "ruShiftKey": "К"
+    "ruShiftKey": "К",
+    "ruCapsKey": "К"
+
   },
   {
     "code": "KeyT",
     "type": "alphanumeric",
     "enKey": "t",
     "enShiftKey": "T",
+    "enCapsKey": "T",
     "ruKey": "е",
-    "ruShiftKey": "Е"
+    "ruShiftKey": "Е",
+    "ruCapsKey": "Е"
   },
   {
     "code": "KeyY",
     "type": "alphanumeric",
     "enKey": "y",
     "enShiftKey": "Y",
+    "enCapsKey": "Y",
     "ruKey": "н",
-    "ruShiftKey": "Н"
+    "ruShiftKey": "Н",
+    "ruCapsKey": "Н"
   },
   {
     "code": "KeyU",
     "type": "alphanumeric",
     "enKey": "u",
     "enShiftKey": "U",
+    "enCapsKey": "U",
     "ruKey": "г",
-    "ruShiftKey": "Г"
+    "ruShiftKey": "Г",
+    "ruCapsKey": "Г"
   },
   {
     "code": "KeyI",
     "type": "alphanumeric",
     "enKey": "i",
     "enShiftKey": "I",
+    "enCapsKey": "I",
     "ruKey": "ш",
-    "ruShiftKey": "Ш"
+    "ruShiftKey": "Ш",
+    "ruCapsKey": "Ш"
   },
   {
     "code": "KeyO",
     "type": "alphanumeric",
     "enKey": "o",
     "enShiftKey": "O",
+    "enCapsKey": "O",
     "ruKey": "щ",
-    "ruShiftKey": "Щ"
+    "ruShiftKey": "Щ",
+    "ruCapsKey": "Щ"
   },
   {
     "code": "KeyP",
     "type": "alphanumeric",
     "enKey": "p",
     "enShiftKey": "P",
+    "enCapsKey": "P",
     "ruKey": "з",
-    "ruShiftKey": "З"
+    "ruShiftKey": "З",
+    "ruCapsKey": "З"
   },
   {
     "code": "BracketLeft",
@@ -207,7 +228,8 @@
     "enKey": "[",
     "enShiftKey": "{",
     "ruKey": "х",
-    "ruShiftKey": "Х"
+    "ruShiftKey": "Х",
+    "ruCapsKey": "Х"
   },
   {
     "code": "BracketRight",
@@ -215,7 +237,8 @@
     "enKey": "]",
     "enShiftKey": "}",
     "ruKey": "ъ",
-    "ruShiftKey": "Ъ"
+    "ruShiftKey": "Ъ",
+    "ruCapsKey": "Ъ"
   },
   {
     "code": "Backslash",
@@ -223,7 +246,8 @@
     "enKey": "\\",
     "enShiftKey": "|",
     "ruKey": "ё",
-    "ruShiftKey": "Ё"
+    "ruShiftKey": "Ё",
+    "ruCapsKey": "Ё"
   },
   {
     "code": "Delete",
@@ -248,72 +272,90 @@
     "type": "alphanumeric",
     "enKey": "a",
     "enShiftKey": "A",
+    "enCapsKey": "A",
     "ruKey": "ф",
-    "ruShiftKey": "Ф"
+    "ruShiftKey": "Ф",
+    "ruCapsKey": "Ф"
   },
   {
     "code": "KeyS",
     "type": "alphanumeric",
     "enKey": "s",
     "enShiftKey": "S",
+    "enCapsKey": "S",
     "ruKey": "ы",
-    "ruShiftKey": "Ы"
+    "ruShiftKey": "Ы",
+    "ruCapsKey": "Ы"
   },
   {
     "code": "KeyD",
     "type": "alphanumeric",
     "enKey": "d",
     "enShiftKey": "D",
+    "enCapsKey": "D",
     "ruKey": "в",
-    "ruShiftKey": "В"
+    "ruShiftKey": "В",
+    "ruCapsKey": "В"
   },
   {
     "code": "KeyF",
     "type": "alphanumeric",
     "enKey": "f",
     "enShiftKey": "F",
+    "enCapsKey": "F",
     "ruKey": "а",
-    "ruShiftKey": "А"
+    "ruShiftKey": "А",
+    "ruCapsKey": "А"
   },
   {
     "code": "KeyG",
     "type": "alphanumeric",
     "enKey": "g",
     "enShiftKey": "G",
+    "enCapsKey": "G",
     "ruKey": "п",
-    "ruShiftKey": "П"
+    "ruShiftKey": "П",
+    "ruCapsKey": "П"
   },
   {
     "code": "KeyH",
     "type": "alphanumeric",
     "enKey": "h",
     "enShiftKey": "H",
+    "enCapsKey": "H",
     "ruKey": "р",
-    "ruShiftKey": "Р"
+    "ruShiftKey": "Р",
+    "ruCapsKey": "Р"
   },
   {
     "code": "KeyJ",
     "type": "alphanumeric",
     "enKey": "j",
     "enShiftKey": "J",
+    "enCapsKey": "J",
     "ruKey": "о",
-    "ruShiftKey": "О"
+    "ruShiftKey": "О",
+    "ruCapsKey": "О"
   },
   {
     "code": "KeyK",
     "type": "alphanumeric",
     "enKey": "k",
     "enShiftKey": "K",
+    "enCapsKey": "K",
     "ruKey": "л",
-    "ruShiftKey": "Л"
+    "ruShiftKey": "Л",
+    "ruCapsKey": "Л"
   },
   {
     "code": "KeyL",
     "type": "alphanumeric",
     "enKey": "l",
     "enShiftKey": "L",
+    "enCapsKey": "L",
     "ruKey": "д",
-    "ruShiftKey": "Д"
+    "ruShiftKey": "Д",
+    "ruCapsKey": "Д"
   },
   {
     "code": "Semicolon",
@@ -321,7 +363,8 @@
     "enKey": ";",
     "enShiftKey": ":",
     "ruKey": "ж",
-    "ruShiftKey": "Ж"
+    "ruShiftKey": "Ж",
+    "ruCapsKey": "Ж"
   },
   {
     "code": "Quote",
@@ -329,7 +372,8 @@
     "enKey": "'",
     "enShiftKey": "\"",
     "ruKey": "э",
-    "ruShiftKey": "Э"
+    "ruShiftKey": "Э",
+    "ruCapsKey": "Э"
   },
   {
     "code": "Enter",
@@ -354,56 +398,70 @@
     "type": "alphanumeric",
     "enKey": "z",
     "enShiftKey": "Z",
+    "enCapsKey": "Z",
     "ruKey": "я",
-    "ruShiftKey": "Я"
+    "ruShiftKey": "Я",
+    "ruCapsKey": "Я"
   },
   {
     "code": "KeyX",
     "type": "alphanumeric",
     "enKey": "x",
     "enShiftKey": "X",
+    "enCapsKey": "X",
     "ruKey": "ч",
-    "ruShiftKey": "Ч"
+    "ruShiftKey": "Ч",
+    "ruCapsKey": "Ч"
   },
   {
     "code": "KeyC",
     "type": "alphanumeric",
     "enKey": "c",
     "enShiftKey": "C",
+    "enCapsKey": "C",
     "ruKey": "с",
-    "ruShiftKey": "С"
+    "ruShiftKey": "С",
+    "ruCapsKey": "С"
   },
   {
     "code": "KeyV",
     "type": "alphanumeric",
     "enKey": "v",
     "enShiftKey": "V",
+    "enCapsKey": "V",
     "ruKey": "м",
-    "ruShiftKey": "М"
+    "ruShiftKey": "М",
+    "ruCapsKey": "М"
   },
   {
     "code": "KeyB",
     "type": "alphanumeric",
     "enKey": "b",
     "enShiftKey": "B",
+    "enCapsKey": "B",
     "ruKey": "и",
-    "ruShiftKey": "И"
+    "ruShiftKey": "И",
+    "ruCapsKey": "И"
   },
   {
     "code": "KeyN",
     "type": "alphanumeric",
     "enKey": "n",
     "enShiftKey": "N",
+    "enCapsKey": "N",
     "ruKey": "т",
-    "ruShiftKey": "Т"
+    "ruShiftKey": "Т",
+    "ruCapsKey": "Т"
   },
   {
     "code": "KeyM",
     "type": "alphanumeric",
     "enKey": "m",
     "enShiftKey": "M",
+    "enCapsKey": "M",
     "ruKey": "ь",
-    "ruShiftKey": "Ь"
+    "ruShiftKey": "Ь",
+    "ruCapsKey": "Ь"
   },
   {
     "code": "Comma",
@@ -411,7 +469,8 @@
     "enKey": ",",
     "enShiftKey": "<",
     "ruKey": "б",
-    "ruShiftKey": "Б"
+    "ruShiftKey": "Б",
+    "ruCapsKey": "Б"
   },
   {
     "code": "Period",
@@ -419,7 +478,8 @@
     "enKey": ".",
     "enShiftKey": ">",
     "ruKey": "ю",
-    "ruShiftKey": "Ю"
+    "ruShiftKey": "Ю",
+    "ruCapsKey": "Ю"
   },
   {
     "code": "Slash",
