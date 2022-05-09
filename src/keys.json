@@ -1,0 +1,590 @@
+[
+  {
+    "code": "Backquote",
+    "type": "alphanumeric",
+    "enKey": "`",
+    "enShiftKey": "~",
+    "ruKey": "]",
+    "ruShiftKey": "["
+  },
+  {
+    "code": "Digit1",
+    "type": "alphanumeric",
+    "enKey": "1",
+    "enShiftKey": "!",
+    "ruKey": "1",
+    "ruShiftKey": "!"
+  },
+  {
+    "code": "Digit2",
+    "type": "alphanumeric",
+    "enKey": "2",
+    "enShiftKey": "@",
+    "ruKey": "2",
+    "ruShiftKey": "\""
+  },
+  {
+    "code": "Digit3",
+    "type": "alphanumeric",
+    "enKey": "3",
+    "enShiftKey": "#",
+    "ruKey": "3",
+    "ruShiftKey": "№"
+  },
+  {
+    "code": "Digit4",
+    "type": "alphanumeric",
+    "enKey": "4",
+    "enShiftKey": "$",
+    "ruKey": "4",
+    "ruShiftKey": "%"
+  },
+  {
+    "code": "Digit5",
+    "type": "alphanumeric",
+    "enKey": "5",
+    "enShiftKey": "%",
+    "ruKey": "5",
+    "ruShiftKey": ":"
+  },
+  {
+    "code": "Digit6",
+    "type": "alphanumeric",
+    "enKey": "6",
+    "enShiftKey": "^",
+    "ruKey": "6",
+    "ruShiftKey": ","
+  },
+  {
+    "code": "Digit7",
+    "type": "alphanumeric",
+    "enKey": "7",
+    "enShiftKey": "&",
+    "ruKey": "7",
+    "ruShiftKey": "."
+  },
+  {
+    "code": "Digit8",
+    "type": "alphanumeric",
+    "enKey": "8",
+    "enShiftKey": "*",
+    "ruKey": "8",
+    "ruShiftKey": ";"
+  },
+  {
+    "code": "Digit9",
+    "type": "alphanumeric",
+    "enKey": "9",
+    "enShiftKey": "(",
+    "ruKey": "9",
+    "ruShiftKey": "("
+  },
+  {
+    "code": "Digit0",
+    "type": "alphanumeric",
+    "enKey": "0",
+    "enShiftKey": ")",
+    "ruKey": "0",
+    "ruShiftKey": ")"
+  },
+  {
+    "code": "Minus",
+    "type": "alphanumeric",
+    "enKey": "-",
+    "enShiftKey": "_",
+    "ruKey": "-",
+    "ruShiftKey": "_"
+  },
+  {
+    "code": "Equal",
+    "type": "alphanumeric",
+    "enKey": "=",
+    "enShiftKey": "+",
+    "ruKey": "=",
+    "ruShiftKey": "+"
+  },
+  {
+    "code": "Backspace",
+    "type": "functional",
+    "position": "right",
+    "enKey": "backspace",
+    "enShiftKey": "backspace",
+    "ruKey": "backspace",
+    "ruShiftKey": "backspace"
+  },
+  {
+    "code": "Tab",
+    "type": "functional",
+    "position": "left",
+    "enKey": "tab",
+    "enShiftKey": "tab",
+    "ruKey": "tab",
+    "ruShiftKey": "tab"
+  },
+  {
+    "code": "KeyQ",
+    "type": "alphanumeric",
+    "enKey": "q",
+    "enShiftKey": "Q",
+    "enCapsKey": "Q",
+    "ruKey": "й",
+    "ruShiftKey": "Й",
+    "ruCapsKey": "Й"
+  },
+  {
+    "code": "KeyW",
+    "type": "alphanumeric",
+    "enKey": "w",
+    "enShiftKey": "W",
+    "enCapsKey": "W",
+    "ruKey": "ц",
+    "ruShiftKey": "Ц",
+    "ruCapsKey": "Ц"
+  },
+  {
+    "code": "KeyE",
+    "type": "alphanumeric",
+    "enKey": "e",
+    "enShiftKey": "E",
+    "enCapsKey": "E",
+    "ruKey": "у",
+    "ruShiftKey": "У",
+    "ruCapsKey": "У"
+  },
+  {
+    "code": "KeyR",
+    "type": "alphanumeric",
+    "enKey": "r",
+    "enShiftKey": "R",
+    "enCapsKey": "R",
+    "ruKey": "к",
+    "ruShiftKey": "К",
+    "ruCapsKey": "К"
+
+  },
+  {
+    "code": "KeyT",
+    "type": "alphanumeric",
+    "enKey": "t",
+    "enShiftKey": "T",
+    "enCapsKey": "T",
+    "ruKey": "е",
+    "ruShiftKey": "Е",
+    "ruCapsKey": "Е"
+  },
+  {
+    "code": "KeyY",
+    "type": "alphanumeric",
+    "enKey": "y",
+    "enShiftKey": "Y",
+    "enCapsKey": "Y",
+    "ruKey": "н",
+    "ruShiftKey": "Н",
+    "ruCapsKey": "Н"
+  },
+  {
+    "code": "KeyU",
+    "type": "alphanumeric",
+    "enKey": "u",
+    "enShiftKey": "U",
+    "enCapsKey": "U",
+    "ruKey": "г",
+    "ruShiftKey": "Г",
+    "ruCapsKey": "Г"
+  },
+  {
+    "code": "KeyI",
+    "type": "alphanumeric",
+    "enKey": "i",
+    "enShiftKey": "I",
+    "enCapsKey": "I",
+    "ruKey": "ш",
+    "ruShiftKey": "Ш",
+    "ruCapsKey": "Ш"
+  },
+  {
+    "code": "KeyO",
+    "type": "alphanumeric",
+    "enKey": "o",
+    "enShiftKey": "O",
+    "enCapsKey": "O",
+    "ruKey": "щ",
+    "ruShiftKey": "Щ",
+    "ruCapsKey": "Щ"
+  },
+  {
+    "code": "KeyP",
+    "type": "alphanumeric",
+    "enKey": "p",
+    "enShiftKey": "P",
+    "enCapsKey": "P",
+    "ruKey": "з",
+    "ruShiftKey": "З",
+    "ruCapsKey": "З"
+  },
+  {
+    "code": "BracketLeft",
+    "type": "alphanumeric",
+    "enKey": "[",
+    "enShiftKey": "{",
+    "ruKey": "х",
+    "ruShiftKey": "Х",
+    "ruCapsKey": "Х"
+  },
+  {
+    "code": "BracketRight",
+    "type": "alphanumeric",
+    "enKey": "]",
+    "enShiftKey": "}",
+    "ruKey": "ъ",
+    "ruShiftKey": "Ъ",
+    "ruCapsKey": "Ъ"
+  },
+  {
+    "code": "Backslash",
+    "type": "alphanumeric",
+    "enKey": "\\",
+    "enShiftKey": "|",
+    "ruKey": "ё",
+    "ruShiftKey": "Ё",
+    "ruCapsKey": "Ё"
+  },
+  {
+    "code": "Delete",
+    "type": "functional",
+    "position": "right",
+    "enKey": "delete",
+    "enShiftKey": "delete",
+    "ruKey": "delete",
+    "ruShiftKey": "delete"
+  },
+  {
+    "code": "CapsLock",
+    "type": "functional",
+    "position": "left",
+    "enKey": "caps lock",
+    "enShiftKey": "caps lock",
+    "ruKey": "caps lock",
+    "ruShiftKey": "caps lock"
+  },
+  {
+    "code": "KeyA",
+    "type": "alphanumeric",
+    "enKey": "a",
+    "enShiftKey": "A",
+    "enCapsKey": "A",
+    "ruKey": "ф",
+    "ruShiftKey": "Ф",
+    "ruCapsKey": "Ф"
+  },
+  {
+    "code": "KeyS",
+    "type": "alphanumeric",
+    "enKey": "s",
+    "enShiftKey": "S",
+    "enCapsKey": "S",
+    "ruKey": "ы",
+    "ruShiftKey": "Ы",
+    "ruCapsKey": "Ы"
+  },
+  {
+    "code": "KeyD",
+    "type": "alphanumeric",
+    "enKey": "d",
+    "enShiftKey": "D",
+    "enCapsKey": "D",
+    "ruKey": "в",
+    "ruShiftKey": "В",
+    "ruCapsKey": "В"
+  },
+  {
+    "code": "KeyF",
+    "type": "alphanumeric",
+    "enKey": "f",
+    "enShiftKey": "F",
+    "enCapsKey": "F",
+    "ruKey": "а",
+    "ruShiftKey": "А",
+    "ruCapsKey": "А"
+  },
+  {
+    "code": "KeyG",
+    "type": "alphanumeric",
+    "enKey": "g",
+    "enShiftKey": "G",
+    "enCapsKey": "G",
+    "ruKey": "п",
+    "ruShiftKey": "П",
+    "ruCapsKey": "П"
+  },
+  {
+    "code": "KeyH",
+    "type": "alphanumeric",
+    "enKey": "h",
+    "enShiftKey": "H",
+    "enCapsKey": "H",
+    "ruKey": "р",
+    "ruShiftKey": "Р",
+    "ruCapsKey": "Р"
+  },
+  {
+    "code": "KeyJ",
+    "type": "alphanumeric",
+    "enKey": "j",
+    "enShiftKey": "J",
+    "enCapsKey": "J",
+    "ruKey": "о",
+    "ruShiftKey": "О",
+    "ruCapsKey": "О"
+  },
+  {
+    "code": "KeyK",
+    "type": "alphanumeric",
+    "enKey": "k",
+    "enShiftKey": "K",
+    "enCapsKey": "K",
+    "ruKey": "л",
+    "ruShiftKey": "Л",
+    "ruCapsKey": "Л"
+  },
+  {
+    "code": "KeyL",
+    "type": "alphanumeric",
+    "enKey": "l",
+    "enShiftKey": "L",
+    "enCapsKey": "L",
+    "ruKey": "д",
+    "ruShiftKey": "Д",
+    "ruCapsKey": "Д"
+  },
+  {
+    "code": "Semicolon",
+    "type": "alphanumeric",
+    "enKey": ";",
+    "enShiftKey": ":",
+    "ruKey": "ж",
+    "ruShiftKey": "Ж",
+    "ruCapsKey": "Ж"
+  },
+  {
+    "code": "Quote",
+    "type": "alphanumeric",
+    "enKey": "'",
+    "enShiftKey": "\"",
+    "ruKey": "э",
+    "ruShiftKey": "Э",
+    "ruCapsKey": "Э"
+  },
+  {
+    "code": "Enter",
+    "type": "functional",
+    "position": "right",
+    "enKey": "enter",
+    "enShiftKey": "enter",
+    "ruKey": "enter",
+    "ruShiftKey": "enter"
+  },
+  {
+    "code": "ShiftLeft",
+    "type": "functional",
+    "position": "left",
+    "enKey": "shift",
+    "enShiftKey": "shift",
+    "ruKey": "shift",
+    "ruShiftKey": "shift"
+  },
+  {
+    "code": "KeyZ",
+    "type": "alphanumeric",
+    "enKey": "z",
+    "enShiftKey": "Z",
+    "enCapsKey": "Z",
+    "ruKey": "я",
+    "ruShiftKey": "Я",
+    "ruCapsKey": "Я"
+  },
+  {
+    "code": "KeyX",
+    "type": "alphanumeric",
+    "enKey": "x",
+    "enShiftKey": "X",
+    "enCapsKey": "X",
+    "ruKey": "ч",
+    "ruShiftKey": "Ч",
+    "ruCapsKey": "Ч"
+  },
+  {
+    "code": "KeyC",
+    "type": "alphanumeric",
+    "enKey": "c",
+    "enShiftKey": "C",
+    "enCapsKey": "C",
+    "ruKey": "с",
+    "ruShiftKey": "С",
+    "ruCapsKey": "С"
+  },
+  {
+    "code": "KeyV",
+    "type": "alphanumeric",
+    "enKey": "v",
+    "enShiftKey": "V",
+    "enCapsKey": "V",
+    "ruKey": "м",
+    "ruShiftKey": "М",
+    "ruCapsKey": "М"
+  },
+  {
+    "code": "KeyB",
+    "type": "alphanumeric",
+    "enKey": "b",
+    "enShiftKey": "B",
+    "enCapsKey": "B",
+    "ruKey": "и",
+    "ruShiftKey": "И",
+    "ruCapsKey": "И"
+  },
+  {
+    "code": "KeyN",
+    "type": "alphanumeric",
+    "enKey": "n",
+    "enShiftKey": "N",
+    "enCapsKey": "N",
+    "ruKey": "т",
+    "ruShiftKey": "Т",
+    "ruCapsKey": "Т"
+  },
+  {
+    "code": "KeyM",
+    "type": "alphanumeric",
+    "enKey": "m",
+    "enShiftKey": "M",
+    "enCapsKey": "M",
+    "ruKey": "ь",
+    "ruShiftKey": "Ь",
+    "ruCapsKey": "Ь"
+  },
+  {
+    "code": "Comma",
+    "type": "alphanumeric",
+    "enKey": ",",
+    "enShiftKey": "<",
+    "ruKey": "б",
+    "ruShiftKey": "Б",
+    "ruCapsKey": "Б"
+  },
+  {
+    "code": "Period",
+    "type": "alphanumeric",
+    "enKey": ".",
+    "enShiftKey": ">",
+    "ruKey": "ю",
+    "ruShiftKey": "Ю",
+    "ruCapsKey": "Ю"
+  },
+  {
+    "code": "Slash",
+    "type": "alphanumeric",
+    "enKey": "/",
+    "enShiftKey": "?",
+    "ruKey": "/",
+    "ruShiftKey": "?"
+  },
+  {
+    "code": "ShiftRight",
+    "type": "functional",
+    "position": "right",
+    "enKey": "shift",
+    "enShiftKey": "shift",
+    "ruKey": "shift",
+    "ruShiftKey": "shift"
+  },
+  {
+    "code": "IntlRo",
+    "type": "alphanumeric",
+    "enKey": "\\",
+    "enShiftKey": "\\",
+    "ruKey": "\\",
+    "ruShiftKey": "\\"
+  },
+  {
+    "code": "ControlLeft",
+    "type": "functional",
+    "position": "left",
+    "enKey": "control",
+    "enShiftKey": "control",
+    "ruKey": "control",
+    "ruShiftKey": "control"
+  },
+  {
+    "code": "AltLeft",
+    "type": "functional",
+    "position": "left",
+    "enKey": "option",
+    "enShiftKey": "option",
+    "ruKey": "option",
+    "ruShiftKey": "option"
+  },
+  {
+    "code": "MetaLeft",
+    "type": "functional",
+    "position": "left",
+    "enKey": "command",
+    "enShiftKey": "command",
+    "ruKey": "command",
+    "ruShiftKey": "command"
+  },
+  {
+    "code": "Space",
+    "type": "alphanumeric",
+    "enKey": " ",
+    "enShiftKey": " ",
+    "ruKey": " ",
+    "ruShiftKey": " "
+  },
+  {
+    "code": "MetaRight",
+    "type": "functional",
+    "position": "right",
+    "enKey": "command",
+    "enShiftKey": "command",
+    "ruKey": "command",
+    "ruShiftKey": "command"
+  },
+  {
+    "code": "AltRight",
+    "type": "functional",
+    "position": "right",
+    "enKey": "option",
+    "enShiftKey": "option",
+    "ruKey": "option",
+    "ruShiftKey": "option"
+  },
+  {
+    "code": "ArrowUp",
+    "enKey": "",
+    "enShiftKey": "",
+    "ruKey": "",
+    "ruShiftKey": ""
+  },
+  {
+    "code": "ArrowLeft",
+    "enKey": "",
+    "enShiftKey": "",
+    "ruKey": "",
+    "ruShiftKey": ""
+  },
+  {
+    "code": "ArrowDown",
+    "enKey": "",
+    "enShiftKey": "",
+    "ruKey": "",
+    "ruShiftKey": ""
+  },
+  {
+    "code": "ArrowRight",
+    "enKey": "",
+    "enShiftKey": "",
+    "ruKey": "",
+    "ruShiftKey": ""
+  }
+]
