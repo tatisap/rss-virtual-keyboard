@@ -64,3 +64,10 @@ window.addEventListener('keyup', (event) => {
     keyboard.switchLanguage();
   }
 });
+
+window.addEventListener('keyup', (event) => {
+  if ((event.altKey && (event.code === 'MetaLeft'))
+    || (event.metaKey && (event.code === 'AltLeft'))) {
+    keyboard.switchTheme();
+  }
+});

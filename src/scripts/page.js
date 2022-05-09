@@ -1,3 +1,8 @@
+const notes = ['This keyboard is based on the MacOS.',
+  'To hold down the Shift key you need to press and move the mouse away from the button.',
+  'Left Control + Left Option (Alt) is hotkey to switch a language.',
+  'Left Command (Win) + Left Option (Alt) is hotkey to switch the keyboard theme.'];
+
 export default function initPageLayout() {
   const pageContainer = document.createElement('div');
   pageContainer.classList.add('container');
@@ -23,6 +28,12 @@ export default function initPageLayout() {
 
   const info = document.createElement('div');
   info.classList.add('info');
+  const paragraphs = notes.map((note) => {
+    const p = document.createElement('p');
+    p.textContent = note;
+    return p;
+  });
+  info.append(...paragraphs);
   main.append(info);
 
   pageContainer.append(main);

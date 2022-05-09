@@ -64,6 +64,11 @@ export default class Keyboard {
     this.changeButtonsContent();
   }
 
+  switchTheme() {
+    this.element.classList.toggle('dark-theme');
+    this.buttons.forEach((button) => { button.element.classList.toggle('dark-theme'); });
+  }
+
   swap() {
     let basket;
     this.buttons.forEach((button) => {
@@ -132,7 +137,7 @@ export default class Keyboard {
       case 'Tab': this.textarea.setRangeText('\t', start, end, 'end');
         break;
       case 'Backspace':
-        if (start === 0) return;
+        if (start === 0 && start === end) return;
         this.textarea.setRangeText('', (start === end) ? start - 1 : start, end, 'end');
         break;
       case 'Delete': this.textarea.setRangeText('', start, (start === end) ? end + 1 : end, 'end');

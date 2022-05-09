@@ -6,6 +6,12 @@
   font-weight: 400;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Space';
+  src: url('../assets/fonts/SpaceMono-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
 
 $light-background-color: #e6e6e6;
 $light-buttons-color: #f5f5f5;
@@ -23,6 +29,9 @@ $light-active-color: #fde1c9;
 $arrow-down: url('../assets/arrow-down.svg');
 $arrow-up: url('../assets/arrow-up.svg');
 $arrow-left: url('../assets/arrow-left.svg');
+$arrow-down-light: url('../assets/arrow-down-light.svg');
+$arrow-up-light: url('../assets/arrow-up-light.svg');
+$arrow-left-light: url('../assets/arrow-left-light.svg');
 
 html {
   box-sizing: border-box;
@@ -52,15 +61,16 @@ body {
   padding: 10px;
   border: 1px solid $light-border-color;
   border-radius: 5px;
-  width: 350px;
+  width: 500px;
   height: 200px;
+  font: normal 400 16px 'Space', monospace;
+  color: $dark-buttons-color;
 }
 .keyboard-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 10px 8px;
-  margin: 0 auto;
-  margin-top: 50px;
+  margin: 50px auto;
   border-radius: 30px;
   padding: 15px;
   width: 834px;
@@ -99,6 +109,16 @@ body {
     cursor: pointer;
     background-color: $light-active-color;
   }
+  &.dark-theme {
+    border-color: $dark-border-color;
+    background-color: $dark-buttons-color;
+    color: $dark-text-color;
+    &.active,
+    &.pressed {
+      background-color: $active-color;
+      box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.5) inset;
+    }
+  }
   &.active,
   &.pressed {
     background-color: $active-color;
@@ -136,15 +156,27 @@ body {
     background-repeat: no-repeat;
     &:nth-child(1) {
       background-image: $arrow-up;
+      &.dark-theme {
+        background-image: $arrow-up-light;
+      }
     }
     &:nth-child(2) {
       background-image: $arrow-left;
+      &.dark-theme {
+        background-image: $arrow-left-light;
+      }
     }
     &:nth-child(3) {
       background-image: $arrow-down;
+      &.dark-theme {
+        background-image: $arrow-down-light;
+      }
     }
     &:nth-child(4) {
       background-image: $arrow-left;
+      &.dark-theme {
+        background-image: $arrow-down-light;
+      }
       transform: rotate(180deg);
     }
   }
@@ -159,6 +191,21 @@ body {
   }
   &.space {
     width: 342px;
+  }
+}
+
+.info {
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid $light-border-color;
+  border-radius: 5px;
+  width: 400px;
+  text-align: justify;
+  font: normal 400 14px 'Space', monospace;
+  color: $dark-buttons-color;
+  line-height: 1.5em;
+  & p {
+    margin: 10px 0;
   }
 }
 
