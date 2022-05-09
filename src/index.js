@@ -19,6 +19,7 @@ window.addEventListener('keydown', (event) => {
   keyboard.buttons.forEach((button) => {
     if (event.code !== button.code) return;
     if (button.code !== 'CapsLock') button.element.classList.add('pressed');
+    if (keyboard.isShiftOn) return;
     keyboard.press(button);
   });
 });

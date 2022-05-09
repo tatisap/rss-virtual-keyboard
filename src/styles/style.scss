@@ -24,7 +24,7 @@ $dark-border-color: #4f4f4f;
 $dark-text-color: #f5f5f5;
 
 $active-color: #fac79b;
-$light-active-color: #fde1c9;
+$light-active-color: #fbdcc0;
 
 $arrow-down: url('../assets/arrow-down.svg');
 $arrow-up: url('../assets/arrow-up.svg');
@@ -108,11 +108,17 @@ body {
   &:hover {
     cursor: pointer;
     background-color: $light-active-color;
+    transition: 0.3s;
   }
   &.dark-theme {
     border-color: $dark-border-color;
     background-color: $dark-buttons-color;
     color: $dark-text-color;
+    &:hover {
+      cursor: pointer;
+      background-color: $light-active-color;
+      transition: 0.3s;
+    }
     &.active,
     &.pressed {
       background-color: $active-color;
@@ -174,10 +180,10 @@ body {
     }
     &:nth-child(4) {
       background-image: $arrow-left;
-      &.dark-theme {
-        background-image: $arrow-down-light;
-      }
       transform: rotate(180deg);
+      &.dark-theme {
+        background-image: $arrow-left-light;
+      }
     }
   }
   &.right.shift {

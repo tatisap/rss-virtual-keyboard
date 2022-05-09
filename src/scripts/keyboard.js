@@ -174,6 +174,13 @@ export default class Keyboard {
         this.trigger = 'Shift';
         this.changeKeysCase();
         break;
+      case 'ControlLeft':
+      case 'AltLeft':
+      case 'MetaLeft':
+      case 'MetaRight':
+      case 'AltRight':
+        this.textarea.blur();
+        break;
       default:
         if (button.type === 'alphanumeric') {
           this.textarea.setRangeText(button.content.textContent, start, end, 'end');
