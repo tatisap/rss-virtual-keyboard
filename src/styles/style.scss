@@ -20,6 +20,10 @@ $dark-text-color: #f5f5f5;
 $active-color: #fac79b;
 $light-active-color: #fde1c9;
 
+$arrow-down: url('../assets/arrow-down.svg');
+$arrow-up: url('../assets/arrow-up.svg');
+$arrow-left: url('../assets/arrow-left.svg');
+
 html {
   box-sizing: border-box;
   scroll-behavior: smooth; 
@@ -128,6 +132,21 @@ body {
     border-radius: 5px;
     height: 20px;
     font-size: 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+    &:nth-child(1) {
+      background-image: $arrow-up;
+    }
+    &:nth-child(2) {
+      background-image: $arrow-left;
+    }
+    &:nth-child(3) {
+      background-image: $arrow-down;
+    }
+    &:nth-child(4) {
+      background-image: $arrow-left;
+      transform: rotate(180deg);
+    }
   }
   &.right.shift {
     width: 113px;
@@ -142,3 +161,4 @@ body {
     width: 342px;
   }
 }
+

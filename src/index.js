@@ -11,8 +11,11 @@ keyboard.buttons.forEach((button) => { keyboard.add(button); });
 keyboard.addArrowWrapper();
 
 window.addEventListener('keydown', (event) => {
+  event.preventDefault();
   keyboard.buttons.forEach((button) => {
-    if (event.code === button.code) button.element.classList.add('pressed');
+    if (event.code !== button.code) return;
+    keyboard.press(button);
+    button.element.classList.add('pressed');
   });
 });
 window.addEventListener('keyup', (event) => {
@@ -33,8 +36,8 @@ document.querySelector('.keyboard-wrapper').addEventListener('click', (event) =>
 
       if (keyboard.shiftIsOn) {
         keyboard.changeKeysCase();
-        keyboard.toggleShift();
         keyboard.removeActiveAll();
+        keyboard.toggleShift();
       }
     }
     if (button.code === 'Enter') keyboard.textarea.setRangeText('\n', keyboard.textarea.selectionStart, keyboard.textarea.selectionEnd, 'end');
@@ -45,8 +48,15 @@ document.querySelector('.keyboard-wrapper').addEventListener('click', (event) =>
 });
 
 document.querySelectorAll('.shift').forEach((shift) => {
-  shift.addEventListener('click', (event) => {
+  shift.addEventListener('mousedown', (event) => {
     const element = event.target.closest('.shift');
+    element.classList.toggle('active');
+    keyboard.changeKeysCase();
+    keyboard.toggleShift();
+  });
+  shift.addEventListener('mouseup', (event) => {
+    const element = event.target.closest('.shift');
+    if (!element) return;
     element.classList.toggle('active');
     keyboard.changeKeysCase();
     keyboard.toggleShift();

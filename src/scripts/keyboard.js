@@ -54,7 +54,7 @@ export default class Keyboard {
 
   removeActiveAll() {
     this.buttons.forEach((button) => {
-      if (button.code !== 'CapsLock') button.element.classList.remove('pressed');
+      if (button.element.classList.contains('shift')) button.element.classList.remove('active');
     });
   }
 
@@ -69,5 +69,73 @@ export default class Keyboard {
       const content = button[this.language][this.case];
       elem.content.textContent = content;
     });
+  }
+
+  setPointer(position) {
+    this.textarea.selectionStart = position;
+    this.textarea.selectionEnd = this.textarea.selectionStart;
+  }
+
+  getLines() {
+    return this.textarea.value.split(/\n/);
+  }
+
+  getPointerCoords() {
+    const lines = this.getLines();
+    let s = 0;
+    const y = lines.findIndex((str) => {
+      s += str.length + 1;
+      return s > this.textarea.selectionStart;
+    });
+    const x = lines[y].length + 1 - (s - this.textarea.selectionStart);
+    return { posX: x, posY: y };
+  }
+
+  setPointerCoords(x, y) {
+    const lengthsOfLines = this.getLines().map((line) => line.length);
+    const indent = ((x <= lengthsOfLines[y]) ? x : lengthsOfLines[y]);
+    if (y === 0) {
+      this.setPointer(indent);
+      return;
+    }
+    const pos = lengthsOfLines.slice(0, y).reduce((sum, length) => sum + length + 1) + indent + 1;
+    this.setPointer(pos);
+  }
+
+  press(button) {
+    const start = this.textarea.selectionStart;
+    const end = this.textarea.selectionEnd;
+    const text = this.textarea.value;
+
+    switch (button.code) {
+      case 'Enter': this.textarea.setRangeText('\n', start, end, 'end');
+        break;
+      case 'Tab': this.textarea.setRangeText('\t', start, end, 'end');
+        break;
+      case 'Backspace': this.textarea.setRangeText('', (start === end) ? start - 1 : start, end, 'end');
+        break;
+      case 'Delete': this.textarea.setRangeText('', start, (start === end) ? end + 1 : end, 'end');
+        break;
+      case 'ArrowUp': {
+        const coords = this.getPointerCoords();
+        if (coords.posY === 0) return;
+        this.setPointerCoords(coords.posX, coords.posY - 1);
+      }
+        break;
+      case 'ArrowDown': {
+        const coords = this.getPointerCoords();
+        if (coords.posY === this.getLines().length - 1) return;
+        this.setPointerCoords(coords.posX, coords.posY + 1);
+      }
+        break;
+      case 'ArrowLeft': this.setPointer((start === 0) ? 0 : start - 1);
+        break;
+      case 'ArrowRight': this.setPointer((start === text.length) ? text.length : start + 1);
+        break;
+      default: {
+        if (button.type === 'alphanumeric') this.textarea.setRangeText(button.content.textContent, start, end, 'end');
+      }
+        break;
+    }
   }
 }
