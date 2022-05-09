@@ -17,8 +17,6 @@ export default class Keyboard {
     this.case = 'low';
     this.language = language;
     this.isShiftOn = false;
-    this.isCapsOn = false;
-    this.trigger = '';
   }
 
   add(button) {
@@ -47,10 +45,6 @@ export default class Keyboard {
 
   toggleShift() {
     this.isShiftOn = !this.isShiftOn;
-  }
-
-  toggleCaps() {
-    this.isCapsOn = !this.isCapsOn;
   }
 
   removeActiveShift() {
@@ -161,8 +155,6 @@ export default class Keyboard {
       case 'CapsLock':
         this.textarea.blur();
         button.element.classList.toggle('active');
-        this.toggleCaps();
-        this.trigger = 'CapsLock';
         this.swap();
         this.changeButtonsContent();
         break;
@@ -171,7 +163,6 @@ export default class Keyboard {
         this.textarea.blur();
         button.element.classList.toggle('active');
         this.toggleShift();
-        this.trigger = 'Shift';
         this.changeKeysCase();
         break;
       case 'ControlLeft':

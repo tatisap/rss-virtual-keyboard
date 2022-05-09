@@ -1,5 +1,4 @@
 const notes = ['This keyboard is based on the MacOS.',
-  'To hold down the Shift key you need to press and move the mouse away from the button.',
   'Left Control + Left Option (Alt) is hotkey to switch a language.',
   'Left Command (Win) + Left Option (Alt) is hotkey to switch the keyboard theme.'];
 

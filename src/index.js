@@ -19,7 +19,7 @@ window.addEventListener('keydown', (event) => {
   keyboard.buttons.forEach((button) => {
     if (event.code !== button.code) return;
     if (button.code !== 'CapsLock') button.element.classList.add('pressed');
-    if (keyboard.isShiftOn) return;
+    if (button.code === 'CapsLock' && !event.getModifierState('CapsLock')) return;
     keyboard.press(button);
   });
 });
@@ -27,9 +27,13 @@ window.addEventListener('keyup', (event) => {
   keyboard.buttons.forEach((button) => {
     if (event.code !== button.code) return;
     button.element.classList.remove('pressed');
+    if (button.code === 'CapsLock' && event.getModifierState('CapsLock')) return;
     if (button.code === 'CapsLock') keyboard.press(button);
     if (button.code.includes('Shift')) keyboard.press(button);
   });
+  if (Array.from(document.querySelectorAll('.shift')).every((shift) => shift.classList.contains('active'))) {
+    keyboard.removeActiveShift();
+  }
 });
 
 document.querySelector('.keyboard-wrapper').addEventListener('click', (event) => {
@@ -42,6 +46,12 @@ document.querySelector('.keyboard-wrapper').addEventListener('click', (event) =>
     keyboard.textarea.focus();
     keyboard.press(button);
   });
+});
+
+window.addEventListener('mouseup', () => {
+  if (Array.from(document.querySelectorAll('.shift')).every((shift) => shift.classList.contains('active'))) {
+    keyboard.removeActiveShift();
+  }
 });
 
 document.querySelectorAll('.shift').forEach((shift) => {
