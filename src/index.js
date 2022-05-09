@@ -10,64 +10,53 @@ const keyboard = new Keyboard(keys);
 keyboard.buttons.forEach((button) => { keyboard.add(button); });
 keyboard.addArrowWrapper();
 
+window.addEventListener('beforeunload', () => {
+  localStorage.setItem('lng', keyboard.language);
+});
+
 window.addEventListener('keydown', (event) => {
   event.preventDefault();
   keyboard.buttons.forEach((button) => {
     if (event.code !== button.code) return;
+    if (button.code !== 'CapsLock') button.element.classList.add('pressed');
     keyboard.press(button);
-    button.element.classList.add('pressed');
   });
 });
 window.addEventListener('keyup', (event) => {
   keyboard.buttons.forEach((button) => {
-    if (event.code === button.code) button.element.classList.remove('pressed');
+    if (event.code !== button.code) return;
+    button.element.classList.remove('pressed');
+    if (button.code === 'CapsLock') keyboard.press(button);
+    if (button.code.includes('Shift')) keyboard.press(button);
   });
 });
 
 document.querySelector('.keyboard-wrapper').addEventListener('click', (event) => {
   const element = event.target.closest('.button');
   if (!element) return;
+  if (element.classList.contains('shift')) return;
 
   keyboard.buttons.forEach((button) => {
     if (element !== button.element) return;
     keyboard.textarea.focus();
-    if (button.type === 'alphanumeric') {
-      keyboard.textarea.setRangeText(button.content.textContent, keyboard.textarea.selectionStart, keyboard.textarea.selectionEnd, 'end');
-
-      if (keyboard.shiftIsOn) {
-        keyboard.changeKeysCase();
-        keyboard.removeActiveAll();
-        keyboard.toggleShift();
-      }
-    }
-    if (button.code === 'Enter') keyboard.textarea.setRangeText('\n', keyboard.textarea.selectionStart, keyboard.textarea.selectionEnd, 'end');
-    if (button.code === 'Tab') keyboard.textarea.setRangeText('\t', keyboard.textarea.selectionStart, keyboard.textarea.selectionEnd, 'end');
-    if (button.code === 'Backspace') keyboard.textarea.setRangeText('', keyboard.textarea.selectionStart - 1, keyboard.textarea.selectionEnd, 'end');
-    if (button.code === 'Delete') keyboard.textarea.setRangeText('', keyboard.textarea.selectionStart, keyboard.textarea.selectionEnd + 1, 'end');
+    keyboard.press(button);
   });
 });
 
 document.querySelectorAll('.shift').forEach((shift) => {
   shift.addEventListener('mousedown', (event) => {
-    const element = event.target.closest('.shift');
-    element.classList.toggle('active');
-    keyboard.changeKeysCase();
-    keyboard.toggleShift();
+    const elem = event.target.closest('.shift');
+    const button = keyboard.buttons.find((btn) => btn.element === elem);
+    keyboard.press(button);
   });
   shift.addEventListener('mouseup', (event) => {
-    const element = event.target.closest('.shift');
-    if (!element) return;
-    element.classList.toggle('active');
-    keyboard.changeKeysCase();
-    keyboard.toggleShift();
+    console.log(keyboard.isShiftOn);
+    if (!keyboard.shiftIsOn) return;
+    const elem = event.target.closest('.shift');
+    if (!elem) return;
+    const button = keyboard.buttons.find((btn) => btn.element === elem);
+    keyboard.press(button);
   });
-});
-
-document.querySelector('.caps-lock').addEventListener('click', (event) => {
-  const element = event.target.closest('.caps-lock');
-  element.classList.toggle('active');
-  keyboard.changeKeysCase();
-  keyboard.toggleCaps();
 });
 
 window.addEventListener('keyup', (event) => {
@@ -75,8 +64,4 @@ window.addEventListener('keyup', (event) => {
     || (event.shiftKey && (event.code === 'MetaLeft' || event.code === 'MetaRight'))) {
     keyboard.switchLanguage();
   }
-});
-
-window.addEventListener('beforeunload', () => {
-  localStorage.setItem('lng', keyboard.language);
 });

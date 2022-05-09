@@ -52,7 +52,7 @@ export default class Keyboard {
     this.capsIsOn = !this.capsIsOn;
   }
 
-  removeActiveAll() {
+  removeActiveShift() {
     this.buttons.forEach((button) => {
       if (button.element.classList.contains('shift')) button.element.classList.remove('active');
     });
@@ -106,13 +106,16 @@ export default class Keyboard {
     const start = this.textarea.selectionStart;
     const end = this.textarea.selectionEnd;
     const text = this.textarea.value;
+    this.textarea.focus();
 
     switch (button.code) {
       case 'Enter': this.textarea.setRangeText('\n', start, end, 'end');
         break;
       case 'Tab': this.textarea.setRangeText('\t', start, end, 'end');
         break;
-      case 'Backspace': this.textarea.setRangeText('', (start === end) ? start - 1 : start, end, 'end');
+      case 'Backspace':
+        if (start === 0) return;
+        this.textarea.setRangeText('', (start === end) ? start - 1 : start, end, 'end');
         break;
       case 'Delete': this.textarea.setRangeText('', start, (start === end) ? end + 1 : end, 'end');
         break;
@@ -132,9 +135,23 @@ export default class Keyboard {
         break;
       case 'ArrowRight': this.setPointer((start === text.length) ? text.length : start + 1);
         break;
-      default: {
-        if (button.type === 'alphanumeric') this.textarea.setRangeText(button.content.textContent, start, end, 'end');
-      }
+      case 'CapsLock':
+        this.textarea.blur();
+        button.element.classList.toggle('active');
+        this.changeKeysCase();
+        this.toggleCaps();
+        break;
+      case 'ShiftLeft':
+      case 'ShiftRight':
+        this.textarea.blur();
+        button.element.classList.toggle('active');
+        this.changeKeysCase();
+        this.toggleShift();
+        break;
+      default:
+        if (button.type === 'alphanumeric') {
+          this.textarea.setRangeText(button.content.textContent, start, end, 'end');
+        }
         break;
     }
   }
